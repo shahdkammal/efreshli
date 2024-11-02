@@ -14,6 +14,9 @@
      <link rel="stylesheet" href="assets/swiper-bundle.min.css">
     <!-- css -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <title>Home Service Management</title>
 </head>
 <body>
@@ -148,94 +151,77 @@
             </div>
           </section>
           <!-- services -->
-           <section class="services section" id="services">
-                   <div class="services__container container grid">
-                     <div class="services__data">
-                        <div>
-                            <span class="section__subtitle">OUR SERVICES</span>
-                            <h2 class="section__title">High Quality <br>Home Maintenance Service</h2>
-                        </div>
-                        <p class="services__description">
-                            We provide multiple services for you. 
-                            offering confidence and security.
-                        </p>
-                        <a href="#contact" class="button">Request Service Now</a>
-
-                     </div>
-                     <div class="services__swiper swiper">
-                        <div class="swiper-wrapper">
-                            <article class="services__card swiper-slide">
-                                <div class="services__icon">
-                                    <i class="ri-open-arm-line"></i>
-
-                                </div>
-                                <h3 class="services__title">House Keeping</h3>
-                                <p>
-                                    We Train Workers and care about your home and your safety
-                                </p>
-                            </article>
-                            <article class="services__card swiper-slide">
-                                <div class="services__icon">
-                                    <i class="ri-water-percent-line"></i>
-
-                                </div>
-                                <h3 class="services__title">Plumbers</h3>
-                                <p>
-                                    We Train Workers and care about your home and your safety
-                                </p>
-                            </article>
-                            <article class="services__card swiper-slide">
-                                <div class="services__icon">
-                                    <i class="ri-battery-charge-line"></i>
-
-                                </div>
-                                <h3 class="services__title">Electrician</h3>
-                                <p>
-                                    We Train Workers and care about your home and your safety
-                                </p>
-                            </article>
-
-                            <article class="services__card swiper-slide">
-                                <div class="services__icon">
-                                    <i class="ri-hammer-line"></i>
-
-                                </div>
-                                <h3 class="services__title">Carpenters</h3>
-                                <p>
-                                    We Train Workers and care about your home and your safety
-                                </p>
-                            </article>
-
-                            <article class="services__card swiper-slide">
-                                <div class="services__icon">
-                                    <i class="ri-brush-4-line"></i>
-
-                                </div>
-                                <h3 class="services__title">Painters</h3>
-                                <p>
-                                    We Train Workers and care about your home and your safety
-                                </p>
-                            </article>
-
-                        </div>
-
-
-                     </div>
-                     <!-- Navigation buttons -->
-                     <div class="swiper-button-prev">
-                        <i class="ri-arrow-left-line"></i>
-                     </div>
-
-                     <div class="swiper-button-next">
-                        <i class="ri-arrow-right-line"></i>
-                     </div>
-
-                   </div>
-
-                   <div class="services__shape">
-
-                   </div>
-           </section>
+          <section class="services section" id="services">
+            <div class="services__container container grid">
+              <div class="services__data">
+                <div>
+                  <span class="section__subtitle">OUR SERVICES</span>
+                  <h2 class="section__title">High Quality <br>Home Maintenance Service</h2>
+                </div>
+                <p class="services__description">
+                  We provide multiple services for you. 
+                  offering confidence and security.
+                </p>
+                <a href="#contact" class="button">Request Service Now</a>
+              </div>
+              <div class="services__swiper swiper">
+                <div class="swiper-wrapper">
+                  <article class="services__card swiper-slide">
+                    <div class="services__icon">
+                      <i class="ri-open-arm-line"></i>
+                    </div>
+                    <h3 class="services__title">House Keeping</h3>
+                    <p>
+                      We Train Workers and care about your home and your safety
+                    </p>
+                  </article>
+                  <article class="services__card swiper-slide">
+                    <div class="services__icon">
+                      <i class="ri-water-percent-line"></i>
+                    </div>
+                    <h3 class="services__title">Plumbers</h3>
+                    <p>
+                      We Train Workers and care about your home and your safety
+                    </p>
+                  </article>
+                  <article class="services__card swiper-slide">
+                    <div class="services__icon">
+                      <i class="ri-battery-charge-line"></i>
+                    </div>
+                    <h3 class="services__title">Electrician</h3>
+                    <p>
+                      We Train Workers and care about your home and your safety
+                    </p>
+                  </article>
+                  <article class="services__card swiper-slide">
+                    <div class="services__icon">
+                      <i class="ri-hammer-line"></i>
+                    </div>
+                    <h3 class="services__title">Carpenters</h3>
+                    <p>
+                      We Train Workers and care about your home and your safety
+                    </p>
+                  </article>
+                  <article class="services__card swiper-slide">
+                    <div class="services__icon">
+                      <i class="ri-brush-4-line"></i>
+                    </div>
+                    <h3 class="services__title">Painters</h3>
+                    <p>
+                      We Train Workers and care about your home and your safety
+                    </p>
+                  </article>
+                </div>
+              </div>
+              <!-- Navigation buttons -->
+              <div class="swiper-button-prev">
+              </div>
+              <div class="swiper-button-next">
+              </div>
+            </div>
+            <div class="services__shape"></div>
+          </section>
+          
            <!-- Reviews -->
             <section class="feedback section" id="feedback">
                 <span class="section__subtitle">Our Clients</span>
@@ -466,5 +452,32 @@
     <script src="assets/swiper-bundle.min.js"></script>
      <!-- linking to main js -->
     <script src="main.js"></script>
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.services__swiper', {
+          loop: true, // Enables continuous loop mode
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          slidesPerView: 1, // Show one slide at a time
+          spaceBetween: 20, // Space between slides
+          breakpoints: {
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+          },
+        });
+      </script>
+      
 </body>
 </html>
