@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form Validation</title>
+    <link rel="stylesheet" href="transaction.css">
+</head>
+<body>
+    <!-- Start Transaction -->
+    <div class="transaction">
+        <div class="container">
+            <form id="paymentForm">
+                <div class="row">
+                    <div class="column">
+                        <h3 class="title">Billing Address</h3>
+                        <div class="input-box">
+                            <span>Full Name:</span>
+                            <input type="text" id="fullName" placeholder="Your name" required>
+                        </div>
+                        <div class="input-box">
+                            <span>Email:</span>
+                            <input type="email" id="email" placeholder="example@example.com" required>
+                        </div>
+                        <div class="input-box">
+                            <span>Address:</span>
+                            <input type="text" id="address" placeholder="Location" required>
+                        </div>
+                        <div class="input-box">
+                            <span>City:</span>
+                            <input type="text" id="city" placeholder="Ismailia" required>
+                        </div>
+                        <div class="flex">
+                            <div class="input-box">
+                                <span>State:</span>
+                                <input type="text" id="state" placeholder="Egypt" required>
+                            </div>
+                            <div class="input-box">
+                                <span>Zip Code:</span>
+                                <input type="text" id="zipCode" placeholder="123 456" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h3 class="title">Payment Method</h3>
+                        <div class="input-box">
+                            <span>Cards Accepted:</span>
+                            <img src="img/imgcards.png" alt="Accepted Credit Cards">
+                        </div>
+                        <div class="input-box">
+                            <span>Name On Card:</span>
+                            <input type="text" id="cardName" placeholder="MR. Abdelrahman Sayed" required>
+                        </div>
+                        <div class="input-box">
+                            <span>Credit Card Number:</span>
+                            <input type="text" id="cardNumber" placeholder="1111 2222 3333 4444" required>
+                        </div>
+                        <div class="input-box">
+                            <span>Exp. Month:</span>
+                            <input type="text" id="expMonth" placeholder="March" required>
+                        </div>
+                        <div class="flex">
+                            <div class="input-box">
+                                <span>Exp. Year:</span>
+                                <input type="number" id="expYear" placeholder="2024" required>
+                            </div>
+                            <div class="input-box">
+                                <span>CVV:</span>
+                                <input type="text" id="cvv" placeholder="123" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- End Transaction -->
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = {
+                fullName: document.getElementById('fullName').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                address: document.getElementById('address').value.trim(),
+                city: document.getElementById('city').value.trim(),
+                state: document.getElementById('state').value.trim(),
+                zipCode: document.getElementById('zipCode').value.trim(),
+                cardName: document.getElementById('cardName').value.trim(),
+                cardNumber: document.getElementById('cardNumber').value.trim(),
+                expMonth: document.getElementById('expMonth').value.trim(),
+                expYear: document.getElementById('expYear').value.trim(),
+                cvv: document.getElementById('cvv').value.trim()
+            };
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const cardNumberRegex = /^\d{16}$/;
+            const zipCodeRegex = /^\d{5,6}$/;
+            const cvvRegex = /^\d{4}$/;
+
+            if (!emailRegex.test(formData.email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            if (!cardNumberRegex.test(formData.cardNumber.replace(/\s/g, ''))) {
+                alert("Please enter a valid 16-digit credit card number.");
+                return;
+            }
+
+            if (!zipCodeRegex.test(formData.zipCode)) {
+                alert("Please enter a valid 5-6 digit zip code.");
+                return;
+            }
+
+            if (!cvvRegex.test(formData.cvv)) {
+                alert("Please enter a valid 4-digit CVV.");
+                return;
+            }
+
+            const currentYear = new Date().getFullYear();
+            const expYear = parseInt(formData.expYear);
+            if (isNaN(expYear) || expYear < currentYear || expYear > currentYear + 20) {
+                alert("Please enter a valid expiration year.");
+                return;
+            }
+
+            localStorage.setItem('billingData', JSON.stringify(formData));
+            alert("Payment information submitted successfully!");
+
+            document.getElementById('paymentForm').reset();
+        });
+    </script>
+</body>
+</html>
