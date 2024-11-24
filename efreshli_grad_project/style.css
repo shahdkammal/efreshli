@@ -235,16 +235,16 @@ img {
   font-weight: var(--font-bold);
   margin-bottom: 1rem;
 }
-.home__description {
+.home__description p{
   margin-bottom: 2.5rem;
-  color: var(--text-color-light);
+  color: var(--white-color);
 }
 .home__buttons {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 .home__info {
   display: flex;
@@ -315,13 +315,14 @@ img {
 .button__link:hover {
   transform: translateX(0.25rem);
 }
-.button__contact{
-   display: inline;
+.button_contact{
+  display: inline;
   background: var(--first-gradient);
   color: var(--white-color);
-  font-weight: var(--font-semi-bold);
-  padding: 1rem 2rem;
+  font-weight: var(--small-font-size);
+  padding: 1rem 1rem;
   transition: box-shadow 0.4s;
+  
 }
 
 /* about */
@@ -438,32 +439,43 @@ img {
   /* Adjust the card size */
 }
 
+
+
 /* swiper class */
 .swiper {
-  margin-inline: initial;
+  position: relative;
+  margin: 0 auto;
   padding-bottom: 4rem;
 }
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  content: "";
-  margin-top: 170px;
-}
-.swiper-button-prev,
-.swiper-button-next {
-  top: initial;
+
+.swiper-button-prev, .swiper-button-next {
+  position: absolute;
   bottom: 0;
+  transform: translateY(50%);
   width: 32px;
   height: 32px;
-  box-shadow: 0 2px 8px hsla(255, 8%, 4%, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   font-size: 1.5rem;
+  background-color: #faf6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
+
 .swiper-button-prev {
-  left: calc(50% - 3rem);
+  left: 50%;
+  transform: translate(-50%, 50%);
 }
+
 .swiper-button-next {
-  right: calc(50% - 3rem);
+  right: 50%;
+  transform: translate(50%, 50%);
 }
+
+
+
 
 /* feedback */
 .feedback {
@@ -535,19 +547,12 @@ img {
 }
 .contact__title {
   font-size: var(--h2-font-size);
-  margin-bottom:1.1rem;
+  margin-bottom: 2rem;
 }
 .contact__info {
   font-style: normal;
 }
-.contact__social {
-  display: flex;
-  justify-content: center;
-  column-gap: 1rem;
-}
-.contact__social-link:hover {
-  transform: translateY(-0.25rem);
-}
+
 
 /* footer */
 
