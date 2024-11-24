@@ -227,6 +227,7 @@ img {
 }
 .home__data {
   text-align: center;
+  color: var(--text-color-light);
 }
 .home__title {
   color: var(--white-color);
@@ -243,6 +244,7 @@ img {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin-top: 2rem;
 }
 .home__info {
   display: flex;
@@ -312,6 +314,14 @@ img {
 }
 .button__link:hover {
   transform: translateX(0.25rem);
+}
+.button__contact{
+   display: inline;
+  background: var(--first-gradient);
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem 2rem;
+  transition: box-shadow 0.4s;
 }
 
 /* about */
@@ -525,7 +535,7 @@ img {
 }
 .contact__title {
   font-size: var(--h2-font-size);
-  margin-bottom: 0.5rem;
+  margin-bottom:1.1rem;
 }
 .contact__info {
   font-style: normal;

@@ -277,7 +277,7 @@
                     <h2 class="section__title">Write to us</h2>
 
                     <div class="contact__container grid">
-                        <img src="img/3353866.jpg" alt="image" class="contact__img">
+                        <img src="img/close-up-businesswoman-with-big-smile - Copy.jpg" alt="image" class="contact__img">
 
                         <div class="contact__data grid">
                             <div class="contact__card">
@@ -310,22 +310,8 @@
 
                                 </div>
                                 <h3 class="contact__title">Chat with us</h3>
-                                <div class="contact__social">
-                                    <a href="" target="_blank" class="contact__social-link">
-                                        <i class="ri-whatsapp-line"></i>
-
-                                    </a>
-
-                                    <a href="" target="_blank" class="contact__social-link">
-                                        <i class="ri-messenger-line"></i>
-                                        
-                                    </a>
-
-                                    <a href="" target="_blank" class="contact__social-link">
-                                        <i class="ri-telegram-line"></i>
-                                        
-                                    </a>
-                            </div>
+                                 <a href="form.html" class="button__contact">Send </a>
+                                
                         </div>
                     </div>
                 </div>
@@ -339,7 +325,7 @@
             <div>
                 <a href="#" class="footer__logo">
                   <i class="ri-tools-line"></i>
-                  <span>Repair</span>
+                  <span>efreshli</span>
                 </a>
 
                 <p class="footer__description">We build security <br> and trust in homes.</p>
@@ -451,32 +437,18 @@
     <script src="assets/swiper-bundle.min.js"></script>
      <!-- linking to main js -->
     <script src="main.js"></script>
-    <script>
-        // Initialize Swiper
-        const swiper = new Swiper('.services__swiper', {
-          loop: true, // Enables continuous loop mode
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-          slidesPerView: 1, // Show one slide at a time
-          spaceBetween: 20, // Space between slides
-          breakpoints: {
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 30,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 40,
-            },
-          },
-        });
-      </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper('.services__swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+</script>
       
 </body>
 </html>
